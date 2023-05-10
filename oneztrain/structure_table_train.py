@@ -15,6 +15,7 @@ def tructure_table_data_splite(args):
     data_dir="/home/DiskA/zncsPython/table_det"
     output_dir=data_dir+"/labelme_coco/"
     str_train_table = ('python tools/x2coco.py \
+            --dataset_type labelme \
             --json_input_dir '+data_dir+'/labelme_json/ \
             --image_input_dir '+data_dir+'/labelme/ \
             --output_dir '+output_dir+' \
@@ -22,6 +23,7 @@ def tructure_table_data_splite(args):
             --val_proportion 0.2 \
             --test_proportion 0.0')
     result1 = os.system(str_train_table)
+    print(str_train_table)
     print(result1)
 def structure_table_train(args):
     os.chdir('/home/DiskA/PycharmProjects/PaddleDetection/')
