@@ -1,6 +1,7 @@
 import random
 import os
 import subprocess
+import datetime
 def main(args):
     if "train"==args.type:
         # 数据准备
@@ -11,9 +12,14 @@ def main(args):
 
 
 def tructure_table_data_splite(args):
+
     os.chdir('/home/DiskA/PycharmProjects/PaddleDetection/')
     data_dir="/home/DiskA/zncsPython/table_det"
-    output_dir=data_dir+"/labelme_coco/"
+    output_dir=data_dir+"/coco_data/"
+    if os.path.exists(output_dir):
+        new_out_dir=output_dir.replace('coco_data','coco_data'+datetime.datetime.now().strftime("%Y%m%d%H%M%S%f"))
+        os.rename(output_dir,new_out_dir)
+        os.mkdir(output_dir)
     str_train_table = ('python tools/x2coco.py \
             --dataset_type labelme \
             --json_input_dir '+data_dir+'/labelme_json/ \
