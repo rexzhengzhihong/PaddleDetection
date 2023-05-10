@@ -5,7 +5,7 @@ def main(args):
     if "train"==args.type:
         # 数据准备
         tructure_table_data_splite(args)
-        #structure_table_train(args)
+        structure_table_train(args)
         export_table_inference(args)
         print( '***************************************************    structure_table train success!     ******************************************************')
 
