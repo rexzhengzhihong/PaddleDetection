@@ -5,10 +5,10 @@ _BASE_: [
   '../../_base_/picodet_640_reader.yml',
 ]
 
-pretrain_weights: https://paddledet.bj.bcebos.com/models/pretrained/LCNet_x1_0_pretrained.pdparams
-save_dir: /home/DiskA/zncsPython/table_det/model/output
-#pretrain_weights: https://paddleocr.bj.bcebos.com/ppstructure/models/layout/picodet_lcnet_x1_0_fgd_layout_table.pdparams
-#save_dir: /home/DiskA/zncsPython/table_det/model/output_table
+#pretrain_weights: https://paddledet.bj.bcebos.com/models/pretrained/LCNet_x1_0_pretrained.pdparams
+#save_dir: /home/DiskA/zncsPython/table_det/model/output
+pretrain_weights: https://paddleocr.bj.bcebos.com/ppstructure/models/layout/picodet_lcnet_x1_0_fgd_layout_table.pdparams
+save_dir: /home/DiskA/zncsPython/table_det/model/output_table
 #pretrain_weights: https://paddleocr.bj.bcebos.com/ppstructure/models/layout/picodet_lcnet_x1_0_fgd_layout.pdparams
 #save_dir: /home/DiskA/zncsPython/table_det/model/output_layout
 weights: output/picodet_lcnet_x1_0_layout/model_final

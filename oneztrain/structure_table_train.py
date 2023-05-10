@@ -43,7 +43,7 @@ def structure_table_train(args):
 def export_table_inference(args):
     os.chdir('/home/DiskA/PycharmProjects/PaddleDetection/')
     yml_dir = 'configs/picodet/legacy_model/application/layout_analysis/picodet_lcnet_x1_0_layout_table.yml'
-    weights_dir='/home/DiskA/zncsPython/table_det/model/output/picodet_lcnet_x1_0_layout_table/best_model.pdparams'
+    weights_dir='/home/DiskA/zncsPython/table_det/model/output_table/picodet_lcnet_x1_0_layout_table/best_model.pdparams'
     output_dir='/home/DiskA/zncsPython/table_det/model/interence/'
     str_train_table = ('python tools/export_model.py \
                -c ' + yml_dir + ' \
