@@ -22,8 +22,8 @@ def tructure_table_data_splite(args):
         os.mkdir(output_dir)
     str_train_table = ('python tools/x2coco.py \
             --dataset_type labelme \
-            --json_input_dir '+data_dir+'/labelme_json/ \
-            --image_input_dir '+data_dir+'/labelme/ \
+            --json_input_dir '+data_dir+'/labelme_all_bill/ \
+            --image_input_dir '+data_dir+'/labelme_all_bill/ \
             --output_dir '+output_dir+' \
             --train_proportion 0.8 \
             --val_proportion 0.2 \
