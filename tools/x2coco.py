@@ -482,6 +482,8 @@ def main():
                 os.makedirs(test_out_dir)
         count = 1
         for img_name in os.listdir(args.image_input_dir):
+            if img_name.endswith('.json'):
+                continue
             if count <= train_num:
                 if osp.exists(args.output_dir + '/train/'):
                     shutil.copyfile(
