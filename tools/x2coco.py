@@ -26,6 +26,7 @@ import numpy as np
 import PIL.ImageDraw
 from tqdm import tqdm
 import cv2
+import random
 
 label_to_num = {}
 categories_list = []
@@ -456,6 +457,8 @@ def main():
             )
             os._exit(0)
 
+        if os.path.exists(args.output_dir):
+            shutil.rmtree(args.output_dir)
         # Allocate the dataset.
         total_num = len(glob.glob(osp.join(args.json_input_dir, '*.json')))
         if args.train_proportion != 0:
@@ -480,10 +483,18 @@ def main():
             test_out_dir = args.output_dir + '/test'
             if args.test_proportion != 0.0 and not os.path.exists(test_out_dir):
                 os.makedirs(test_out_dir)
-        count = 1
+
+        imagedir_list=[]
         for img_name in os.listdir(args.image_input_dir):
             if img_name.endswith('.json'):
                 continue
+            imagedir_list.append(img_name)
+
+        print(imagedir_list)
+        random.shuffle(imagedir_list)
+        print(imagedir_list)
+        count = 1
+        for img_name in imagedir_list:
             if count <= train_num:
                 if osp.exists(args.output_dir + '/train/'):
                     shutil.copyfile(
