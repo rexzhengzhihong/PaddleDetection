@@ -4,12 +4,13 @@ import shutil
 
 
 if __name__ == '__main__':
-    folder_path = '/home/DiskA/zncsPython/table_det/labelme_each_bill/ckd_v1/'  # 文件夹路径
-    new_folder_path = '/home/DiskA/zncsPython/table_det/labelme_each_bill/ckd_v1/new/'  # 文件夹路径
+    billname='khzyhd_v1'
+    folder_path = '/home/DiskA/zncsPython/table_det/labelme_each_bill/'+billname+'/'  # 文件夹路径
+    new_folder_path = '/home/DiskA/zncsPython/table_det/labelme_each_bill/'+billname+'/new/'  # 文件夹路径
     if os.path.exists(new_folder_path):
         shutil.rmtree(new_folder_path)
     os.mkdir(new_folder_path)
-    new_name_prefix = 'ckd_v1_'  # 新文件名前缀
+    new_name_prefix = billname+'_'  # 新文件名前缀
     file_extension = '.png'  # 文件扩展名
     file_extension2 = '.jpg'  # 文件扩展名
     # 遍历文件夹中的文件
