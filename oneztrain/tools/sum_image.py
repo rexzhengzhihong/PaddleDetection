@@ -27,6 +27,9 @@ def sum_image(args):
 
 
     for idx, files in enumerate(file_list):
+        if os.path.exists(os.path.join(eachbill_path,files,'paddleLable_tagging_data')):
+            files=os.path.join(files,'paddleLable_tagging_data')
+
         image_list = os.listdir(os.path.join(eachbill_path,files))
         for img_idx, image_name in enumerate(image_list):
             new_file_path = os.path.join(output_dir,image_name)

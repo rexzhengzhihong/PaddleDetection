@@ -4,7 +4,7 @@ import shutil
 
 
 if __name__ == '__main__':
-    billname='khzyhd_v1'
+    billname='zzsptfp_v1'
     folder_path = '/home/DiskA/zncsPython/table_det/labelme_each_bill/'+billname+'/'  # 文件夹路径
     new_folder_path = '/home/DiskA/zncsPython/table_det/labelme_each_bill/'+billname+'/new/'  # 文件夹路径
     if os.path.exists(new_folder_path):
