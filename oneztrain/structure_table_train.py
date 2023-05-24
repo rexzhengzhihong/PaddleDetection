@@ -4,6 +4,13 @@ import subprocess
 import datetime
 def main(args):
     if "train"==args.type:
+        os.chdir('/home/DiskA/PycharmProjects/PaddleDetection/')
+        tr_sum_img = ('python oneztrain/tools/sum_image.py ')
+        result1 = os.system(tr_sum_img)
+        print(tr_sum_img)
+        print(result1)
+
+
         # 数据准备
         tructure_table_data_splite(args)
         structure_table_train(args)
