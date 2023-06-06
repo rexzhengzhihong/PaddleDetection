@@ -47,8 +47,8 @@ def structure_table_train(args):
     #         --eval ')
 
     # 双卡
-    str_train_table = ('python -m paddle.distributed.launch --gpus 0,1 tools/train.py \
-                -c ' + yml_dir + ' \
+    str_train_table = ("python -m paddle.distributed.launch --gpus '0,1' tools/train.py \
+                -c " + yml_dir + ' \
                 --eval ')
 
     result1 = os.system(str_train_table)
