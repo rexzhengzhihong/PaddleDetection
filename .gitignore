@@ -88,3 +88,5 @@ kernel_meta/
 
 /pretrained_model/
 /dataset/roadsign_voc/
+/log/workerlog.0
+/log/workerlog.1
