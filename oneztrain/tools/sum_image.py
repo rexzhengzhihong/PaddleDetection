@@ -18,7 +18,7 @@ def sum_image(args):
         os.makedirs(output_dir)
 
     file_list = []
-    r = "^([A-Za-z0-9_\-\.]+)(_v)[0-9]$"
+    r = "^([A-Za-z0-9_\-\.\(\)]+)(_v)[0-9]$"
     for img_name in os.listdir(eachbill_path):
         m = re.match(r, img_name)
         if m != None:
