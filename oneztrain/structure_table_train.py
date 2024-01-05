@@ -5,9 +5,10 @@ import datetime
 def main(args):
     if "train"==args.type:
         os.chdir('/home/DiskA/PycharmProjects/PaddleDetection/')
-        tr_sum_img = ('python oneztrain/tools/sum_image.py ')
-        result1 = os.system(tr_sum_img)
-        print(tr_sum_img)
+        #tr_sum_img = ('python oneztrain/tools/sum_image.py ')
+        str_copy_image_from_git = ('python oneztrain/tools/copy_image_from_git.py ')
+        result1 = os.system(str_copy_image_from_git)
+        print(str_copy_image_from_git)
         print(result1)
 
 
@@ -41,15 +42,15 @@ def tructure_table_data_splite(args):
 def structure_table_train(args):
     os.chdir('/home/DiskA/PycharmProjects/PaddleDetection/')
     yml_dir='configs/picodet/legacy_model/application/layout_analysis/picodet_lcnet_x1_0_layout_table.yml'
-    # 单卡
-    # str_train_table = ('python tools/train.py \
-    #         -c '+yml_dir+' \
-    #         --eval ')
+    #单卡
+    str_train_table = ("python -m paddle.distributed.launch --gpus '0' tools/train.py \
+            -c "+yml_dir+' \
+            --eval ')
 
-    # 双卡
-    str_train_table = ("python -m paddle.distributed.launch --gpus '0,1' tools/train.py \
-                -c " + yml_dir + ' \
-                --eval ')
+    # # 双卡
+    # str_train_table = ("python -m paddle.distributed.launch --gpus '0,1' tools/train.py \
+    #             -c " + yml_dir + ' \
+    #             --eval ')
 
     result1 = os.system(str_train_table)
     print(str_train_table)
